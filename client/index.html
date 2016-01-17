@@ -11,14 +11,43 @@
     <script src="./assets/js/app.js"></script>
   </head>
   <body>
-    <div class="grid-frame vertical">
-      <div class="grid-content shrink" style="padding: 0;">
-        <ul class="primary condense menu-bar">
-          <li><a><strong>Foundation for Apps</strong></a></li>
-        </ul>
+
+    <div class="horizontal grid-block title">
+      <div class="grid-block shrink">
+        <img class="title-logo" alt="UBS" src="assets/img/ubs_regular_rgb_26.svg"/>
       </div>
-      <div ui-view class="grid-content">
+      <div class="vertical text-right grid-block">
+        <div class="grid-content">
+          <h3>Structured Product Investor</h3>
+        </div>
+        <div class="grid-content">
+          <div class="version-info">DEV x.y.z</div>
+        </div>
       </div>
     </div>
+
+    <div class="grid-frame vertical">
+      <div class="grid-content" style="padding: 0;">
+        <div class="menu-group primary">
+          <div class="menu-group-left">
+            <ul class="menu-bar primary">
+              <li><a ui-sref="calculator">Calculator</a></li>
+              <li><a ui-sref="quotes">Quotes</a></li>
+              <li><a ui-sref="orders">Orders</a></li>
+            </ul>
+          </div>
+          <div class="menu-group-right">
+            <ul class="icon-left primary menu-bar">
+              <li><a href="#"><img zf-iconic="" icon="thumb" size="small" class="iconic-color-primary">News</a></li>
+              <li><a href="#"><img zf-iconic="" icon="thumb" size="small" class="iconic-color-primary">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <base href="/"/>
+      <div ng-class="['ui-animation']" class="grid-frame vertical easeInOut" ui-view></div>
+    </div>
+
   </body>
 </html>

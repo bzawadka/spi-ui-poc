@@ -1,0 +1,21 @@
+.title {
+	margin: 1.25rem;
+
+	.title-logo {
+		width: rem-calc(108 * 1.375/1.6875);
+		height: rem-calc(42 * 1.375/1.6875);
+		margin-right: 0.625rem;
+	}
+
+	@include breakpoint(medium) {
+		.title-logo {
+			width: rem-calc(108);
+			height: rem-calc(42);
+			margin-right: 1.25rem;
+		}
+	}
+
+	.version-info {
+		font-size: rem-calc(12);
+	}
+}
