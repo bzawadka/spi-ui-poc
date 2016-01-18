@@ -24,7 +24,8 @@
 }
 
 .title {
-	margin: 1.25rem;
+	margin-top: rem-calc(40);
+	margin-bottom: rem-calc(32);
 
 	.title-logo {
 		width: rem-calc(108 * 1.375/1.6875);
@@ -48,9 +49,10 @@
 }
 
 .menu-group {
-	border-bottom-color: #bebebe;
 	border-bottom-style: solid;
 	border-bottom-width: rem-calc(1);
+	border-bottom-color: #bebebe;
+	margin-bottom: rem-calc(64);
 }
 
 .menu-group-left {
@@ -59,20 +61,26 @@
 	}	
 }
 
-.menu-group-right {
-	li {
-		margin-left: rem-calc(17.5);
-	}	
+@include breakpoint(medium) {
+	.menu-group-right {
+		li {
+			margin-left: rem-calc(17.5);
+		}
+	}
 }
 
 .menu-bar  {
-	& a {
+	& > li > a {
 		border-bottom-style: solid;
 		border-bottom-width: rem-calc(5);
 		border-bottom-color: white;
-	}
 
-	& a:hover {
-		border-bottom-color: $primary-color;
+		@include breakpoint(medium) {
+			font-size: rem-calc(18);
+		}
+
+		&:hover {
+			border-bottom-color: $primary-color;
+		}
 	}
 }
