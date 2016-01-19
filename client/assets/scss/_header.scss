@@ -25,6 +25,23 @@ $canvas-color: #fff;
 	}
 }
 
+.location-container {
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	right: rem-calc(64);
+
+	.location {
+		padding: rem-calc(10);
+		list-style: none;
+
+		&:hover {
+			background-color: #646464;
+			color: #fff;
+		}
+	};
+}
+
 .title {
 	margin-top: rem-calc(40);
 	margin-bottom: rem-calc(32);
@@ -57,7 +74,7 @@ $canvas-color: #fff;
 	margin-bottom: rem-calc(64);
 }
 
-.menu-bar {
+.main-menu-bar {
 	// This placeholder selector gets you the core structural styles for the menu
 	@extend %menu-bar;
 

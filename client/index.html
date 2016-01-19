@@ -12,6 +12,11 @@
   </head>
   <body>
     <div class="vertical grid-block canvas">
+      <div class="location-container">
+        <ul class="location">
+          <li>Switzerland</li>
+        </ul>
+      </div>
       <div class="vertical medium-horizontal grid-block title">
         <div class="grid-block shrink">
           <img class="title-logo" alt="UBS" src="assets/img/ubs_regular_rgb_26.svg"/>
@@ -23,14 +28,14 @@
       </div>
       <div class="menu-group">
         <div class="menu-group-left">
-          <ul class="menu-bar">
+          <ul class="main-menu-bar">
             <li ui-sref-active="is-active"><a ui-sref="calculator">Calculator</a></li>
             <li ui-sref-active="is-active"><a ui-sref="quotes">Quotes</a></li>
             <li ui-sref-active="is-active"><a ui-sref="orders">Orders</a></li>
           </ul>
         </div>
         <div class="menu-group-right">
-          <ul class="menu-bar">
+          <ul class="main-menu-bar">
             <li ui-sref-active="is-active"><a ui-sref="admin">Administration</a></li>
           </ul>
         </div>
@@ -38,6 +43,5 @@
       <div ui-view class="grid-content">
       </div>
     </div>
-
   </body>
 </html>
