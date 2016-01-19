@@ -152,7 +152,7 @@ gulp.task('server', ['build'], function() {
       host: 'localhost',
       fallback: 'index.html',
       livereload: true,
-      open: true
+      open: false
     }))
   ;
 });
