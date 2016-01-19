@@ -1,6 +1,8 @@
+$canvas-color: #fff;
+
 .canvas {
 	padding: 0 rem-calc(7);
-	background-color: white;
+	background-color: $canvas-color;
 }
 
 @include breakpoint(medium) {
@@ -55,32 +57,57 @@
 	margin-bottom: rem-calc(64);
 }
 
-.menu-group-left {
-	li {
-		margin-right: rem-calc(17.5);
-	}	
-}
+.menu-bar {
+	// This placeholder selector gets you the core structural styles for the menu
+	@extend %menu-bar;
 
-@include breakpoint(medium) {
-	.menu-group-right {
-		li {
-			margin-left: rem-calc(17.5);
+	// Set the orientation and sizing of the menu bar
+	@include menu-bar-layout(
+		$orientation: horizontal, // Can be horizontal or vertical
+		$stretch: false // Set to false for a condensed menu
+	);
+
+	// Add styles for the menu bar items and text
+	@include menu-bar-style(
+		$background: transparent, // Background color of items
+		$background-hover: transparent, // Background color of item on hover
+		$background-active: transparent, // Background color of an active item
+		$color: $body-font-color, // Text color of items
+		$color-hover: $body-font-color, // Text color of item on hover
+		$color-active: $body-font-color, // Text color of item when active
+		$autocolor: false // When true, all the above colors will be derived from $background
+	);
+
+	& > li {
+		margin: 0 rem-calc(17.5);
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		& > a {
+			border-bottom-style: solid;
+			border-bottom-width: rem-calc(5);
+			border-bottom-color: transparent;
+			padding-left: 0;
+			padding-right: 0;
+
+			@include breakpoint(medium) {
+				font-size: rem-calc(18);
+			}
+
+
+			&:hover {
+				border-bottom-color: $primary-color;
+			}
 		}
 	}
-}
 
-.menu-bar  {
-	& > li > a {
-		border-bottom-style: solid;
-		border-bottom-width: rem-calc(5);
-		border-bottom-color: white;
-
-		@include breakpoint(medium) {
-			font-size: rem-calc(18);
-		}
-
-		&:hover {
-			border-bottom-color: $primary-color;
-		}
+	.is-active > a {
+		border-bottom-color: #646464;
 	}
 }
